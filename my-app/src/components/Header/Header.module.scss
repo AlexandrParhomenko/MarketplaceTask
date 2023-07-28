@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  height: 150px;
+  background-color: var(--main-grey-standard-color);
+
+  &__walletTable {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+  }
+}
+
+.table {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}
