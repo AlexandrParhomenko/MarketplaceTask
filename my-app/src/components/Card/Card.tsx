@@ -11,9 +11,11 @@ const Card = (props: { item: product, type: 'cart' | 'standard' }) => {
     const cart = useSelector(selectCart)
     return (
         <div className={styles.cardWrapper}>
-            <AiOutlineShop color={'grey'} size={'70'}/>
-            <span>{props.item.title}</span>
-            <span>{`Price: ${props.item.price}$`}</span>
+            <div className={styles.cardData}>
+                <AiOutlineShop color={'grey'} size={'70'}/>
+                <span>{props.item.title}</span>
+                <span>{`Price: ${props.item.price}$`}</span>
+            </div>
             {props.type === 'cart' ? '' : <Button onClick={() => dispatch(setCart([...cart, props.item]))}>Add to cart</Button>}
         </div>
     );

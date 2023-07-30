@@ -20,3 +20,12 @@
   left: -250px;
   top: 20px;
 }
+
+@media (max-width: 700px) {
+  .field {
+    padding: 10px;
+    left: -100px;
+    width: 200px;
+    z-index: 10;
+  }
+}
