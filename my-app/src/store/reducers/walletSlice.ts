@@ -18,8 +18,10 @@ export const walletSlice = createSlice({
     name: 'wallet',
     initialState,
     reducers: {
-        setWallet(state, action) {
+        setCoins(state, action) {
             state.coins = action.payload
+        },
+        setDollars(state, action) {
             state.dollars = action.payload
         },
     },
@@ -34,7 +36,8 @@ export const walletSlice = createSlice({
     }
 })
 
-export const { setWallet } = walletSlice.actions
-export const selectWallet = (state: AppState) => state.wallet
+export const { setCoins, setDollars } = walletSlice.actions
+export const selectCoins = (state: AppState) => state.wallet.coins
+export const selectDollars = (state: AppState) => state.wallet.dollars
 
 export default walletSlice.reducer;

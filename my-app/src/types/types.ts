@@ -16,3 +16,12 @@ export type shopPage = {
 export type dataContainer = {
     carts: shopPage[]
 }
+
+export type paymentMessage = {
+    message: string
+    buttonMessage: string
+}
+
+export type wallet = {
+    type: "coins" | "dollars"
+}

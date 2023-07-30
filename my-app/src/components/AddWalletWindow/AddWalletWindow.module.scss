@@ -1,0 +1,22 @@
+.textField {
+  z-index: 100 !important;
+  order: 1;
+}
+
+.textFieldWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+
+.field {
+  background-color: var(--main-grey-light-color);
+  padding: 30px;
+  border-radius: 5px;
+  position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
+  left: -250px;
+  top: 20px;
+}

@@ -5,13 +5,19 @@ import {GetStaticProps, InferGetStaticPropsType} from "next";
 import {setStore} from "@/store/reducers/storeSlice";
 import {useDispatch} from "react-redux";
 import {dataContainer, shop, shopPage} from "@/types/types";
+import axios from "axios";
 
 
 export const getStaticProps: GetStaticProps<{
     repo: dataContainer
 }> = async () => {
-    const res = await fetch('https://dummyjson.com/carts')
-    const repo = await res.json()
+    // const res = await fetch('https://dummyjson.com/carts')
+    const res = await axios.get('https://dummyjson.com/carts', {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    const repo = await res.data
     return { props: { repo } }
 }
 export default function Home({repo,

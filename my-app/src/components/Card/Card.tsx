@@ -4,8 +4,9 @@ import styles from './Card.module.scss'
 import {AiOutlineShop} from "react-icons/ai";
 import {useDispatch, useSelector} from "react-redux";
 import {selectCart, setCart} from "@/store/reducers/cartSlice";
+import {Button} from "@mui/material";
 
-const Card = (props: { item: product }) => {
+const Card = (props: { item: product, type: 'cart' | 'standard' }) => {
     const dispatch = useDispatch()
     const cart = useSelector(selectCart)
     return (
@@ -13,7 +14,7 @@ const Card = (props: { item: product }) => {
             <AiOutlineShop color={'grey'} size={'70'}/>
             <span>{props.item.title}</span>
             <span>{`Price: ${props.item.price}$`}</span>
-            <span onClick={() => dispatch(setCart([...cart, props.item]))}>Add to cart</span>
+            {props.type === 'cart' ? '' : <Button onClick={() => dispatch(setCart([...cart, props.item]))}>Add to cart</Button>}
         </div>
     );
 };

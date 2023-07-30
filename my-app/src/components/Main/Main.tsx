@@ -9,7 +9,7 @@ const Main = () => {
     console.log(shopItems)
     return (
         <div className={styles.main}>
-            {shopItems.map(el => el.products.map(elem => <Card key={elem.title} item={elem}/>))}
+            {shopItems.map(el => el.products.map(elem => <Card type='standard' key={elem.title} item={elem}/>))}
         </div>
     );
 };
