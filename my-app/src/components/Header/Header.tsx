@@ -29,7 +29,7 @@ const Header = () => {
     const handlePayment = (el: 'coins' | 'dollars') => {
         let payment = countPayment()
         if (el === 'coins') {
-            if (coins > payment) {
+            if (coins >= payment) {
                 dispatch(setCart([]))
                 dispatch(setCoins(coins - payment))
                 setPaymentMessage({message: 'Thank you for your purchase', buttonMessage: 'Continue shopping'})
@@ -38,7 +38,7 @@ const Header = () => {
                 setTransactionComplete(true)
                 setPaymentMessage({message: `You haven't enough wallet. Fill your balance with ${payment - coins} ${el} and try again`, buttonMessage: 'Return back'})
             }
-        } else if (dollars > payment) {
+        } else if (dollars >= payment) {
             setPaymentMessage({message: 'Thank you for your purchase', buttonMessage: 'Continue shopping'})
             setTransactionComplete(true)
             dispatch(setCart([]))
